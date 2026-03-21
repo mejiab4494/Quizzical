@@ -64,6 +64,14 @@
     font-weight: bold;
 }
 
+.question-block img {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  
+}
+
 .question-container {
     width: 100%;
     max-width: 800px;
@@ -71,7 +79,7 @@
     padding: 20px;
 }
 
-questions {
+.question {
     background-color: #293264;
     color: white;
     border: 1px solid #4D5B9E;
@@ -130,3 +138,52 @@ questions {
     margin-top: 20px;
 }
 
+/* for drag and drp question */
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.diagram {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+/* drop zones */
+.drop-zones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.drop-box {
+  border: 2px dashed gray;
+  padding: 10px;
+  min-height: 60px;
+  background: #f9f9f9;
+}
+
+.drop-box.correct {
+  background-color: #c8f7c5;
+}
+
+.drop-box.wrong {
+  background-color: #f7c5c5;
+}
+
+/* labels */
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.label {
+  padding: 8px 12px;
+  background: #ddd;
+  cursor: grab;
+  border-radius: 5px;
+}

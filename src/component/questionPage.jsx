@@ -1,51 +1,69 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import DragDrop from './draganddrop';
 import questions from './questions';
 
 export default function QuestionPage() {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
+  const [draggedItem, setDraggedItem] = useState(null);
+  const [dragAnswers, setDragAnswers] = useState({});
+
+  const shuffledQuestions = useMemo(() => {
+    return [...questions].sort(() => Math.random() - 0.5);
+  }, []);
 
   function getQuestions() {
-    return questions.map((q) => (
-      <div key={q.id} className="question-block">
-        <h3>{q.question}</h3>
+    return shuffledQuestions.map((q) => {
+      if (q.type === "dragdrop") return (
+        <DragDrop
+          key={q.id}
+          q={q}
+          showResults={showResults}
+          dragAnswers={dragAnswers}
+          draggedItem={draggedItem}
+          setDragAnswers={setDragAnswers}
+          setDraggedItem={setDraggedItem}
+        />
+      );
 
-        <div className="options">
-          {q.options.map((opt, index) => {
-            const isSelected = selectedAnswers[q.id] === opt;
-            const isCorrect = q.answer === opt;
+      return (
+        <div key={q.id} className="question-block">
+          <h3>{q.question}</h3>
 
-            let className = "option-btn";
+  
 
-            if (showResults) {
-              if (isCorrect) {
-                className += " correct";
+          <div className="options">
+            {q.options.map((opt, index) => {
+              const isSelected = selectedAnswers[q.id] === opt;
+              const isCorrect = Array.isArray(q.answer)
+                ? q.answer.includes(opt)
+                : q.answer === opt;
+
+              let className = "option-btn";
+              if (showResults) {
+                if (isCorrect) className += " correct";
+                else if (isSelected) className += " wrong";
               } else if (isSelected) {
-                className += " wrong";
+                className += " selected";
               }
-            } else if (isSelected) {
-              className += " selected";
-            }
 
-            return (
-              <button
-                key={index}
-                onClick={() =>
-                  setSelectedAnswers(prev => ({
-                    ...prev,
-                    [q.id]: opt
-                  }))
-                }
-                className={className}
-                disabled={showResults} // 🔒 disables after checking
-              >
-                {opt}
-              </button>
-            );
-          })}
+              return (
+                <button
+                  key={index}
+                  onClick={() =>
+                    setSelectedAnswers(prev => ({ ...prev, [q.id]: opt }))
+                  }
+                  className={className}
+                  disabled={showResults}
+                >
+                  {opt}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    ));
+      );
+    });
   }
 
   return (
@@ -53,12 +71,8 @@ export default function QuestionPage() {
       <div className="question-container">
         {getQuestions()}
       </div>
-
       <div className="check-container">
-        <button
-          onClick={() => setShowResults(true)}
-          className="check-answers"
-        >
+        <button onClick={() => setShowResults(true)} className="check-answers">
           Check Answers
         </button>
       </div>
