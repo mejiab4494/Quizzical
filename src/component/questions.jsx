@@ -30,27 +30,47 @@ const questions = [
    },
   {
     id: 2,
-    question: "Which planet is known as the Red Planet?",
-    options: ["Earth", "Mars", "Jupiter", "Venus"],
-    answer: "Mars"
+    question: "What is the role of a compressor in a refrigeration cycle?",
+    options: [
+    "A) Compresses low-pressure refrigerant gas into high-pressure hot gas",
+    "B) Removes heat from refrigerant by cooling it into a liquid",          
+    "C) Expands refrigerant to lower its pressure and temperature",           
+    "D) Absorbs heat from the space being cooled into the refrigerant"        
+    ],
+    answer: "A) Compresses low-pressure refrigerant gas into high-pressure hot gas",
   },
   {
     id: 3,
-    question: "What is the largest ocean on Earth?",
-    options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
-    answer: "Pacific Ocean"
+    question: "What is the role of a condenser in a refrigeration cycle?",
+    options: [
+    "A) Absorbs heat from the space being cooled into the refrigerant",
+    "B) Compresses low-pressure refrigerant gas into high-pressure hot gas",
+    "C) Expands refrigerant to lower its pressure and temperature",
+    "D) Removes heat from refrigerant and releases it outside, turning gas into liquid"
+    ],
+    answer: "D) Removes heat from refrigerant and releases it outside, turning gas into liquid"
   },
   {
     id: 4,
-    question: "Who wrote the play 'Romeo and Juliet'?",
-    options: ["William Shakespeare", "Mark Twain", "Charles Dickens", "Jane Austen"],
-    answer: "William Shakespeare"
+    question: "What is the role of a metering device (expansion valve) in a refrigeration cycle?",
+    options: [
+    "A) Compresses low-pressure refrigerant gas into high-pressure hot gas",
+    "B) Absorbs heat from the space being cooled into the refrigerant",
+    "C) Expands refrigerant to lower its pressure and temperature",
+    "D) Removes heat from refrigerant and releases it outside, turning gas into liquid"
+  ],
+    answer: "C) Expands refrigerant to lower its pressure and temperature"
   },
   {
     id: 5,
-    question: "What gas do plants absorb from the atmosphere?",
-    options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    answer: "Carbon Dioxide"
+    question: "What is the role of an evaporator in a refrigeration cycle?",
+    options: [
+    "A) Expands refrigerant to lower its pressure and temperature",
+    "B) Absorbs heat from the space being cooled into the refrigerant",
+    "C) Removes heat from refrigerant and releases it outside, turning gas into liquid",
+    "D) Compresses low-pressure refrigerant gas into high-pressure hot gas"
+  ],
+  answer: "B) Absorbs heat from the space being cooled into the refrigerant"
   }
 ];
 
