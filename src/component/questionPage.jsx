@@ -26,7 +26,8 @@ export default function QuestionPage() {
           }
           buffer = [];
         }
-        result.push([q]); // dragdrop gets its own page
+        const shuffledQ = { ...q, labels: [...q.labels].sort(() => Math.random() - 0.5) };
+        result.push([shuffledQ]); // dragdrop gets its own page
       } else {
         buffer.push(q);
         if (buffer.length === QUESTIONS_PER_PAGE) {

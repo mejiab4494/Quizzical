@@ -1,0 +1,26 @@
+.navBtn {
+  position: fixed;
+  top: 125px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navBtn button {
+  background-color: #4D5B9E;
+  color: white;
+  width: 193px;
+  height: 52px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 0 15px 15px 0;  /* only right side rounded */
+  cursor: pointer;
+  transform: translateX(-20px); /* hide most of the button off screen */
+  transition: transform 0.3s ease;
+}
+
+.navBtn button:hover {
+  transform: translateX(0); /* slide fully into view */
+}
