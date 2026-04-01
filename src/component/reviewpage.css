@@ -1,0 +1,39 @@
+.reviewPage-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  color:#4D5B9E
+}
+
+.reviewPage-Container img {
+  max-width: 100%;
+  height: 650px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviewPage-Container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.firesafety {
+    display: flex;
+   
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.firesafety img {
+    max-width: 100%;
+    height: 550px;
+    width: 580px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
