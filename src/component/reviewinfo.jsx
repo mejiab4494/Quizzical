@@ -18,7 +18,13 @@ const reviewInfo = [
     classname: "generator",
     img: "/img/generator.png",
     videoLink: "https://www.youtube.com/watch?v=QtOyye8fYNk"
+  },
+  {
+    id: "UPS",
+    classname: "ups",
+    link: "https://docs.google.com/presentation/d/e/2PACX-1vRWfydjvlVeM4zXUOaa-AJAVkeZHAmoDcn2stqbRJ7iaXhgwfg2ShZ14njAb6d4Rd80MSYMUpgdE-CJ/pubembed?start=false&loop=false&delayms=3000",
   }
+  
 ]
 
 export default reviewInfo;
