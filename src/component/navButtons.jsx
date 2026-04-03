@@ -1,19 +1,40 @@
-import ReviewPage from "./reviewpage";  
+import { useState } from "react";
+import ReviewPage from "./reviewpage";
 import "./navButtons.css";
 
 export default function NavButtons({ page, setPage }) {
-    const reviewPages = ["RefrigerationCycle", "fireSafety", "generator", "UPS"];
+  const [menuOpen, setMenuOpen] = useState(false);
+  const reviewPages = ["RefrigerationCycle", "fireSafety", "generator", "UPS"];
 
-    if (reviewPages.includes(page)) {
+  if (reviewPages.includes(page)) {
     return <ReviewPage page={page} />;
-    }
+  }
+
+  const handleNav = (p) => {
+    setPage(p);
+    setMenuOpen(false);
+  };
 
   return (
-    <div className="navBtn">
-      <button onClick={() => setPage("RefrigerationCycle")}>Refrigeration Cycle</button>
-      <button onClick={() => setPage("fireSafety")}>Fire Life Safety</button>
-      <button onClick={() => setPage("generator")}>Generator</button>
-      <button onClick={() => setPage("UPS")}>UPS</button>
-    </div>
+    <>
+      {/* Hamburger toggle - only visible on small screens */}
+      <button className="menuToggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? "✕" : "☰"}
+      </button>
+
+      {/* Overlay to close menu on outside click */}
+      {menuOpen && (
+        <div className="menuOverlay" onClick={() => setMenuOpen(false)} />
+      )}
+
+      <div className={`navBtn ${menuOpen ? "open" : ""}`}>
+        {/* Home button inside mobile menu */}
+    
+        <button onClick={() => handleNav("RefrigerationCycle")}>Refrigeration Cycle</button>
+        <button onClick={() => handleNav("fireSafety")}>Fire Life Safety</button>
+        <button onClick={() => handleNav("generator")}>Generator</button>
+        <button onClick={() => handleNav("UPS")}>UPS</button>
+      </div>
+    </>
   );
 }

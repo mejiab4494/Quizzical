@@ -8,6 +8,7 @@
   align-items: center;
   background: none;
   cursor: pointer;
+  z-index: 300;
 }
 
 .home-widget svg {
@@ -249,4 +250,4 @@
   color: #666;
 }
 
-/* review pages css */
+
