@@ -41,8 +41,8 @@ export default function StartingPage() {
 
       {page === "home" && (
         <div className="centered-container">
-          <h1>Quizzical</h1>
-          <p>Trivia Quiz App</p>
+          <h1>Data Center 101</h1>
+          <p>Take the quiz and test your knowledge</p>
           <button onClick={() => navigateTo("quiz")} className="start-btn">  {/* ✅ navigateTo */}
             Start quiz
           </button>
