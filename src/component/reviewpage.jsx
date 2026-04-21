@@ -21,21 +21,19 @@ export default function ReviewPage({ page }) {
 
         {/* First image + video link — only if they exist */}
         {info.img && (
-          <a href={info.videoLink} target="_blank" rel="noreferrer">
+          <a href={info.videoLink} target="_blank" rel="noreferrer" title="Click to see video">
             <img src={info.img} alt="diagram" />
           </a>
         )}
 
         {/* Second image + video link — only if they exist */}
         {info.img2 && (
-          <a href={info.videoLink2} target="_blank" rel="noreferrer">
+          <a href={info.videoLink2} target="_blank" rel="noreferrer" title="Click to see video">
             <img src={info.img2} alt="diagram 2" />
           </a>
         )}
 
-      </div>
-      {!info.link && (<h3>Click Image to see Video</h3>
-      )}
+        </div>
       </div>
   );
 }
