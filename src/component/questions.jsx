@@ -488,6 +488,32 @@ const questions = [
     7: "Static Bypass Switch",
     8: "Maintenance Isolation Breaker"
   }
+},
+{
+  id: 41,
+  type: "dragdrop",
+  question: "Label the Pre-Action Cabinet system",
+  image: "../img/preActionCabinet.png",
+
+  labels: [
+    "Flapper/Deluge Valve",
+    "Water Supply",
+    "Dry Pipe Valve",
+    "Priming Pressure Line",
+    "Priming Pressure Gauge",
+    "Water Pressure Gauge",
+    "Release Valve"
+  ],
+
+  answer: {
+    1: "Flapper/Deluge Valve",
+    2: "Water Supply",
+    3: "Dry Pipe Valve",
+    4: "Priming Pressure Line",
+    5: "Priming Pressure Gauge",
+    6: "Water Pressure Gauge",
+    7: "Release Valve",
+  }
 }
 
 ];

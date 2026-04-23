@@ -4,7 +4,7 @@ import "./navButtons.css";
 
 export default function NavButtons({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const reviewPages = ["RefrigerationCycle", "fireSafety", "generator", "UPS"];
+  const reviewPages = ["RefrigerationCycle", "fireSafety", "generator", "UPS", "preActionCabinet"];
 
   if (reviewPages.includes(page)) {
     return <ReviewPage page={page} />;
@@ -34,6 +34,7 @@ export default function NavButtons({ page, setPage }) {
         <button onClick={() => handleNav("fireSafety")}>Fire Life Safety</button>
         <button onClick={() => handleNav("generator")}>Generator</button>
         <button onClick={() => handleNav("UPS")}>UPS</button>
+        <button onClick={() => handleNav("preActionCabinet")}>Pre-Action Cabinet</button>
       </div>
     </>
   );

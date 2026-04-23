@@ -2,13 +2,15 @@ import { useState } from "react";
 import questions from "./questions";
 
 export default function DragDrop({ q, showResults, dragAnswers, draggedItem, setDragAnswers, setDraggedItem }) {
+  const targetKeys = Array.from({ length: q.labels.length }, (_, i) => i + 1);
+
   return (
     <div className="question-block">
       <h3>{q.question}</h3>
       <img src={q.image} alt="diagram" className="diagram" />
 
       <div className="drop-zones">
-        {[1,2,3,4,5,6,7,8].map((num) => (
+        {targetKeys.map((num) => (
           <div
             key={num}
             className={`drop-box ${

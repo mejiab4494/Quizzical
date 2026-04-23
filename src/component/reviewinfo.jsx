@@ -23,6 +23,12 @@ const reviewInfo = [
     id: "UPS",
     classname: "ups",
     link: "https://docs.google.com/presentation/d/e/2PACX-1vRWfydjvlVeM4zXUOaa-AJAVkeZHAmoDcn2stqbRJ7iaXhgwfg2ShZ14njAb6d4Rd80MSYMUpgdE-CJ/pubembed?start=false&loop=false&delayms=3000",
+  },
+  {
+    id: "preActionCabinet",
+    classname: "preActionCabinet1",
+    img: "/img/preActionCabinet1.png",
+    videoLink: "https://www.youtube.com/watch?v=55zpGAOlFeY"
   }
   
 ]
