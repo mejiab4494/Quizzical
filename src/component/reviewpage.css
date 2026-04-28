@@ -20,6 +20,16 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.subQuizBtn {
+  background-color: #4D5B9E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .firesafety {
     display: flex;
    
@@ -43,7 +53,6 @@
   width: 1000px;
   height: 700px;
 }
-
 
 /* Landscape phones and small tablets */
 @media (orientation: landscape) and (max-width: 900px) {

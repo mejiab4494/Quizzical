@@ -7,7 +7,7 @@ export default function NavButtons({ page, setPage }) {
   const reviewPages = ["RefrigerationCycle", "fireSafety", "generator", "UPS", "preActionCabinet"];
 
   if (reviewPages.includes(page)) {
-    return <ReviewPage page={page} />;
+    return <ReviewPage page={page} navTo={setPage} />;
   }
 
   const handleNav = (p) => {

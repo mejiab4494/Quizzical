@@ -4,10 +4,12 @@ import NavButtons from "./navButtons.jsx"
 
 export default function StartingPage() {
   const [page, setPage] = useState("home")
+  const [quizTopic, setQuizTopic] = useState(null)
 
-  const navigateTo = (newPage) => {
+  const navigateTo = (newPage, topic = null) => {
     window.history.pushState({ page: newPage }, "", `#${newPage}`)
     setPage(newPage)
+    setQuizTopic(topic)
   }
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function StartingPage() {
         </button>
       )}
 
-      {page === "quiz" && <QuestionPage />}
+      {page === "quiz" && <QuestionPage topic={quizTopic} />}
 
       {page === "home" && (
         <div className="centered-container">

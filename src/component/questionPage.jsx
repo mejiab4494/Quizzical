@@ -1,10 +1,16 @@
 import { useState, useMemo } from 'react';
 import DragDrop from './draganddrop';
-import questions from './questions';
+import questions from './questions';  
+import './questionPage.css';
+
 
 const QUESTIONS_PER_PAGE = 5;
 
-export default function QuestionPage() {
+export default function QuestionPage({ topic}) {
+    const filtered = topic                    // 👈 missing filtered variable
+    ? questions.filter(q => q.topic === topic)
+    : questions;
+
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showResults, setShowResults] = useState({});
   const [draggedItem, setDraggedItem] = useState(null);
@@ -13,7 +19,7 @@ export default function QuestionPage() {
 
   // Build pages: dragdrop questions get their own page, others are grouped in 5s
   const pages = useMemo(() => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    const shuffled = [...filtered].sort(() => Math.random() - 0.5);
     const result = [];
     let buffer = [];
 
@@ -44,7 +50,7 @@ export default function QuestionPage() {
     }
 
     return result;
-  }, []);
+  }, [topic]);
 
   const currentPage = pages[pageIndex] ?? [];
   const isLastPage = pageIndex === pages.length - 1;

@@ -1,7 +1,7 @@
 import reviewInfo from "./reviewinfo";
 import "./reviewpage.css";
 
-export default function ReviewPage({ page }) {
+export default function ReviewPage({ page, navTo }) {
   const info = reviewInfo.find(item => item.id === page);
   if (!info) return null;
 
@@ -33,6 +33,11 @@ export default function ReviewPage({ page }) {
           </a>
         )}
 
+     
+
+        </div>
+        <div>
+          <button className="subQuizBtn" onClick={() => navTo("quiz", info.topic)}>Subject Quiz</button>
         </div>
       </div>
   );
